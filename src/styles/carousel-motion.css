@@ -1,0 +1,59 @@
+/* Carousel motion follows the reference; geometry and palette stay in portfolio.css. */
+.photo-carousel .photo-carousel-frame { cursor: grab; }
+.photo-carousel[data-dragging='true'] .photo-carousel-frame { cursor: grabbing; }
+.photo-carousel .photo-carousel-slide { pointer-events: none; user-select: none; }
+.photo-carousel .photo-carousel-slide.is-active { z-index: 2; }
+.photo-carousel .photo-carousel-slide.is-exiting { z-index: 3; }
+.photo-carousel .photo-carousel-slide figcaption { opacity: 0; transform: translateY(10px); transition: opacity 300ms ease, transform 300ms ease; }
+.photo-carousel .photo-carousel-slide.is-active:not(.is-exiting) figcaption { opacity: 1; transform: translateY(0); transition-delay: 250ms; }
+.photo-carousel .photo-carousel-slide figcaption strong { font: inherit; }
+.photo-carousel .photo-carousel-arrow, .photo-carousel .photo-carousel-play, .photo-carousel .photo-carousel-progress { z-index: 5; }
+.photo-carousel .photo-carousel-thumbnails { z-index: 5; }
+.photo-carousel .photo-carousel-thumbnails button { transition: transform 200ms ease, opacity 180ms, border-color 180ms, width 200ms; }
+.photo-carousel .photo-carousel-thumbnails button:hover { transform: scale(1.08); }
+.photo-carousel .photo-carousel-thumbnails button:active { transform: scale(.95); }
+.photo-carousel.photo-carousel--portrait .photo-carousel-slide { transition: transform 350ms cubic-bezier(.4, 0, .2, 1), opacity 500ms cubic-bezier(.4, 0, .2, 1); }
+.photo-carousel.photo-carousel--portrait .photo-carousel-slide.is-active.is-arriving { animation: portrait-slide-in 500ms cubic-bezier(.4, 0, .2, 1) both; }
+.photo-carousel.photo-carousel--portrait .photo-carousel-slide.is-exiting { animation: portrait-slide-out 500ms cubic-bezier(.4, 0, .2, 1) both; }
+.photo-carousel.photo-carousel--portrait .photo-carousel-progress .is-active i { animation: none; transform: scaleX(0); }
+.photo-carousel.photo-carousel--portrait[data-dragging='true'] .photo-carousel-slide.is-active { transform: translateX(var(--carousel-drag-x)); transition: none; }
+
+/* The two supplied photos form a real two-card stack; no duplicate filler slides. */
+.portfolio-stories:has(.photo-carousel--stories) { overflow: clip; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slides { overflow: visible; background: transparent; box-shadow: none; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide { overflow: hidden; border-radius: 22px; opacity: 1; transform: translateY(calc(var(--stack-index) * 12px)) scale(calc(1 - var(--stack-index) * .05)); transform-origin: center bottom; box-shadow: 0 20px 30px rgb(32 38 35 / 18%); transition: none; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide.is-active { transform: translateY(0) scale(1); transition: transform 450ms cubic-bezier(.22, 1, .36, 1); }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide.is-exiting { animation: story-card-out 500ms cubic-bezier(.22, 1, .36, 1) both; }
+.photo-carousel.photo-carousel--stories[data-dragging='true'] .photo-carousel-slide.is-active { transform: translateX(var(--carousel-drag-x)) rotate(var(--carousel-drag-rotation)); transition: none; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide figcaption { transform: translateY(30px); transition-duration: 400ms; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide.is-active:not(.is-exiting) figcaption { transform: translateY(0); transition-delay: 150ms; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide figcaption strong, .photo-carousel.photo-carousel--stories .photo-carousel-slide figcaption > span { display: block; opacity: 0; transform: translateY(20px); transition: opacity 400ms ease, transform 400ms ease; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide.is-active:not(.is-exiting) figcaption strong { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide.is-active:not(.is-exiting) figcaption > span { opacity: 1; transform: translateY(0); transition-delay: 300ms; }
+.photo-carousel.photo-carousel--stories figcaption small::before { content: ''; display: block; width: 0; height: 1px; margin-bottom: 12px; background: currentColor; transition: width 400ms ease; }
+.photo-carousel.photo-carousel--stories .photo-carousel-slide.is-active:not(.is-exiting) figcaption small::before { width: 100%; transition-delay: 500ms; }
+
+@keyframes portrait-slide-in {
+  from { opacity: 0; transform: translateX(calc(var(--carousel-direction) * 100%)); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes portrait-slide-out {
+  from { opacity: 1; transform: translateX(var(--carousel-start-x)); }
+  to { opacity: 0; transform: translateX(calc(var(--carousel-direction) * -100%)); }
+}
+@keyframes story-card-out {
+  from { opacity: 1; transform: translateX(var(--carousel-start-x)) rotate(var(--carousel-start-rotation)) scale(1); }
+  to { opacity: 0; transform: translateX(var(--carousel-exit-x)) rotate(var(--carousel-exit-rotation)) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-carousel .photo-carousel-slide,
+  .photo-carousel .photo-carousel-slide.is-active,
+  .photo-carousel .photo-carousel-slide.is-exiting,
+  .photo-carousel .photo-carousel-slide figcaption,
+  .photo-carousel .photo-carousel-slide figcaption strong,
+  .photo-carousel .photo-carousel-slide figcaption > span,
+  .photo-carousel .photo-carousel-slide figcaption small::before,
+  .photo-carousel .photo-carousel-thumbnails button { animation: none !important; transition: none !important; }
+  .photo-carousel .photo-carousel-thumbnails button:hover,
+  .photo-carousel .photo-carousel-thumbnails button:active { transform: none; }
+}

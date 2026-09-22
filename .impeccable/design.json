@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-18T11:33:25.389857+00:00",
+  "title": "Design System: Roxane KIKI — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Bleu signature",
+        "tonalRamp": [
+          "oklch(15.00% 0.19514 266.56)",
+          "oklch(26.43% 0.19514 266.56)",
+          "oklch(37.86% 0.19514 266.56)",
+          "oklch(49.29% 0.19514 266.56)",
+          "oklch(60.71% 0.19514 266.56)",
+          "oklch(72.14% 0.19514 266.56)",
+          "oklch(83.57% 0.19514 266.56)",
+          "oklch(95.00% 0.19514 266.56)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Bleu de survol",
+        "tonalRamp": [
+          "oklch(15.00% 0.16645 266.81)",
+          "oklch(26.43% 0.16645 266.81)",
+          "oklch(37.86% 0.16645 266.81)",
+          "oklch(49.29% 0.16645 266.81)",
+          "oklch(60.71% 0.16645 266.81)",
+          "oklch(72.14% 0.16645 266.81)",
+          "oklch(83.57% 0.16645 266.81)",
+          "oklch(95.00% 0.16645 266.81)"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Brume",
+        "tonalRamp": [
+          "oklch(15.00% 0.02483 273.50)",
+          "oklch(26.43% 0.02483 273.50)",
+          "oklch(37.86% 0.02483 273.50)",
+          "oklch(49.29% 0.02483 273.50)",
+          "oklch(60.71% 0.02483 273.50)",
+          "oklch(72.14% 0.02483 273.50)",
+          "oklch(83.57% 0.02483 273.50)",
+          "oklch(95.00% 0.02483 273.50)"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Ivoire",
+        "tonalRamp": [
+          "oklch(15.00% 0.00409 121.56)",
+          "oklch(26.43% 0.00409 121.56)",
+          "oklch(37.86% 0.00409 121.56)",
+          "oklch(49.29% 0.00409 121.56)",
+          "oklch(60.71% 0.00409 121.56)",
+          "oklch(72.14% 0.00409 121.56)",
+          "oklch(83.57% 0.00409 121.56)",
+          "oklch(95.00% 0.00409 121.56)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Encre",
+        "tonalRamp": [
+          "oklch(15.00% 0.01025 164.07)",
+          "oklch(26.43% 0.01025 164.07)",
+          "oklch(37.86% 0.01025 164.07)",
+          "oklch(49.29% 0.01025 164.07)",
+          "oklch(60.71% 0.01025 164.07)",
+          "oklch(72.14% 0.01025 164.07)",
+          "oklch(83.57% 0.01025 164.07)",
+          "oklch(95.00% 0.01025 164.07)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Gris secondaire",
+        "tonalRamp": [
+          "oklch(15.00% 0.01558 152.32)",
+          "oklch(26.43% 0.01558 152.32)",
+          "oklch(37.86% 0.01558 152.32)",
+          "oklch(49.29% 0.01558 152.32)",
+          "oklch(60.71% 0.01558 152.32)",
+          "oklch(72.14% 0.01558 152.32)",
+          "oklch(83.57% 0.01558 152.32)",
+          "oklch(95.00% 0.01558 152.32)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Bordure neutre",
+        "tonalRamp": [
+          "oklch(15.00% 0.00972 140.51)",
+          "oklch(26.43% 0.00972 140.51)",
+          "oklch(37.86% 0.00972 140.51)",
+          "oklch(49.29% 0.00972 140.51)",
+          "oklch(60.71% 0.00972 140.51)",
+          "oklch(72.14% 0.00972 140.51)",
+          "oklch(83.57% 0.00972 140.51)",
+          "oklch(95.00% 0.00972 140.51)"
+        ]
+      },
+      "projects-bg": {
+        "role": "neutral",
+        "displayName": "Brume projets",
+        "tonalRamp": [
+          "oklch(15.00% 0.02483 273.50)",
+          "oklch(26.43% 0.02483 273.50)",
+          "oklch(37.86% 0.02483 273.50)",
+          "oklch(49.29% 0.02483 273.50)",
+          "oklch(60.71% 0.02483 273.50)",
+          "oklch(72.14% 0.02483 273.50)",
+          "oklch(83.57% 0.02483 273.50)",
+          "oklch(95.00% 0.02483 273.50)"
+        ]
+      },
+      "stack-bg": {
+        "role": "neutral",
+        "displayName": "Brume ruban",
+        "tonalRamp": [
+          "oklch(15.00% 0.02483 273.50)",
+          "oklch(26.43% 0.02483 273.50)",
+          "oklch(37.86% 0.02483 273.50)",
+          "oklch(49.29% 0.02483 273.50)",
+          "oklch(60.71% 0.02483 273.50)",
+          "oklch(72.14% 0.02483 273.50)",
+          "oklch(83.57% 0.02483 273.50)",
+          "oklch(95.00% 0.02483 273.50)"
+        ]
+      },
+      "tag-bg": {
+        "role": "neutral",
+        "displayName": "Fond d’étiquette",
+        "tonalRamp": [
+          "oklch(15.00% 0.02483 273.50)",
+          "oklch(26.43% 0.02483 273.50)",
+          "oklch(37.86% 0.02483 273.50)",
+          "oklch(49.29% 0.02483 273.50)",
+          "oklch(60.71% 0.02483 273.50)",
+          "oklch(72.14% 0.02483 273.50)",
+          "oklch(83.57% 0.02483 273.50)",
+          "oklch(95.00% 0.02483 273.50)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Blanc",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "disabled-bg": {
+        "role": "neutral",
+        "displayName": "Brume désactivée",
+        "tonalRamp": [
+          "oklch(15.00% 0.02483 273.50)",
+          "oklch(26.43% 0.02483 273.50)",
+          "oklch(37.86% 0.02483 273.50)",
+          "oklch(49.29% 0.02483 273.50)",
+          "oklch(60.71% 0.02483 273.50)",
+          "oklch(72.14% 0.02483 273.50)",
+          "oklch(83.57% 0.02483 273.50)",
+          "oklch(95.00% 0.02483 273.50)"
+        ]
+      },
+      "disabled-text": {
+        "role": "neutral",
+        "displayName": "Encre désactivée",
+        "tonalRamp": [
+          "oklch(15.00% 0.01558 152.32)",
+          "oklch(26.43% 0.01558 152.32)",
+          "oklch(37.86% 0.01558 152.32)",
+          "oklch(49.29% 0.01558 152.32)",
+          "oklch(60.71% 0.01558 152.32)",
+          "oklch(72.14% 0.01558 152.32)",
+          "oklch(83.57% 0.01558 152.32)",
+          "oklch(95.00% 0.01558 152.32)"
+        ]
+      },
+      "terminal-bg": {
+        "role": "secondary",
+        "displayName": "Fond terminal",
+        "tonalRamp": [
+          "oklch(15.00% 0.01025 164.07)",
+          "oklch(26.43% 0.01025 164.07)",
+          "oklch(37.86% 0.01025 164.07)",
+          "oklch(49.29% 0.01025 164.07)",
+          "oklch(60.71% 0.01025 164.07)",
+          "oklch(72.14% 0.01025 164.07)",
+          "oklch(83.57% 0.01025 164.07)",
+          "oklch(95.00% 0.01025 164.07)"
+        ]
+      },
+      "terminal-text": {
+        "role": "secondary",
+        "displayName": "Brume terminal",
+        "tonalRamp": [
+          "oklch(15.00% 0.02483 273.50)",
+          "oklch(26.43% 0.02483 273.50)",
+          "oklch(37.86% 0.02483 273.50)",
+          "oklch(49.29% 0.02483 273.50)",
+          "oklch(60.71% 0.02483 273.50)",
+          "oklch(72.14% 0.02483 273.50)",
+          "oklch(83.57% 0.02483 273.50)",
+          "oklch(95.00% 0.02483 273.50)"
+        ]
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Contour de contrôle",
+        "tonalRamp": [
+          "oklch(15.00% 0.01679 151.58)",
+          "oklch(26.43% 0.01679 151.58)",
+          "oklch(37.86% 0.01679 151.58)",
+          "oklch(49.29% 0.01679 151.58)",
+          "oklch(60.71% 0.01679 151.58)",
+          "oklch(72.14% 0.01679 151.58)",
+          "oklch(83.57% 0.01679 151.58)",
+          "oklch(95.00% 0.01679 151.58)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Identité",
+        "purpose": "Nom de Roxane dans le premier écran."
+      },
+      "headline": {
+        "displayName": "Titre de section",
+        "purpose": "Grands titres Playfair Display ; adaptation mobile documentée dans DESIGN.md."
+      },
+      "title": {
+        "displayName": "Titre court",
+        "purpose": "Invitations et sous-titres ; ajustement à 20 px pour les projets."
+      },
+      "body": {
+        "displayName": "Texte courant",
+        "purpose": "Lecture Inter et descriptions."
+      },
+      "label": {
+        "displayName": "Commande",
+        "purpose": "Boutons et liens compacts."
+      },
+      "terminal": {
+        "displayName": "Signature terminal",
+        "purpose": "Titre de la section photo finale."
+      }
+    },
+    "shadows": [
+      {
+        "name": "portrait",
+        "value": "0 14px 24px rgb(32 38 35 / 12%)",
+        "purpose": "Profondeur du carrousel portrait."
+      },
+      {
+        "name": "album",
+        "value": "0 20px 30px rgb(32 38 35 / 18%)",
+        "purpose": "Profondeur du grand album final."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "180ms",
+        "purpose": "Transitions de couleur, fond, bordure et opacité des commandes."
+      },
+      {
+        "name": "photo-fade",
+        "value": "450ms ease",
+        "purpose": "Fondu entre les photos ; supprimé avec réduction des mouvements."
+      },
+      {
+        "name": "carousel-autoplay",
+        "value": "6000ms",
+        "purpose": "Délai entre photos ; suspendu au survol et arrêté après sélection ou focus dans les autres contrôles."
+      },
+      {
+        "name": "stack-loop",
+        "value": "36s linear infinite",
+        "purpose": "Ruban de technologies ; pause au survol ou par commande explicite, liste fixe en réduction des mouvements."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1050px"
+      },
+      {
+        "name": "mobile-layout",
+        "value": "760px"
+      },
+      {
+        "name": "single-project-column",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Action principale ; aperçu du style de lien vers Contact.",
+      "html": "<a class=\"ds-primary\" href=\"#contact\">Me contacter <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:8px 14px;border:1px solid transparent;border-radius:999px;background:#294bc6;color:white;font:500 13px/1.5 'Inter Variable', 'Inter', sans-serif;text-decoration:none;cursor:pointer;transition:background-color 180ms;}.ds-primary:hover{background:#203ba0}.ds-primary:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    },
+    {
+      "name": "CV compact",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "Variante courte de l’en-tête, utilisée comme lien si le CV existe.",
+      "html": "<a class=\"ds-small\" href=\"#contact\">Voir CV</a>",
+      "css": ".ds-small{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:8px 14px;border:1px solid transparent;border-radius:999px;background:#294bc6;color:white;font:500 13px/1.5 'Inter Variable', 'Inter', sans-serif;text-decoration:none;cursor:pointer;transition:background-color 180ms;min-height:34px;padding:6px 11px;border-radius:6px;white-space:nowrap}.ds-small:hover{background:#203ba0}.ds-small:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    },
+    {
+      "name": "CV indisponible",
+      "kind": "button",
+      "refersTo": "button-disabled",
+      "description": "État actuel avec bouton désactivé et explication.",
+      "html": "<div class=\"ds-unavailable\"><button class=\"ds-disabled\" disabled aria-describedby=\"ds-cv-note\">Télécharger mon CV</button><p id=\"ds-cv-note\">Le CV sera disponible prochainement.</p></div>",
+      "css": ".ds-disabled{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:8px 14px;border:1px solid transparent;border-radius:999px;background:#294bc6;color:white;font:500 13px/1.5 'Inter Variable', 'Inter', sans-serif;text-decoration:none;cursor:pointer;transition:background-color 180ms;background:#e8edff;color:#5d665f;cursor:not-allowed}.ds-unavailable p{font:400 11px/1.6 'Inter Variable', 'Inter', sans-serif;color:#5d665f;margin:10px 0 0}"
+    },
+    {
+      "name": "Lien social",
+      "kind": "button",
+      "refersTo": "social-link",
+      "description": "Lien bordé avec icône SVG décorative.",
+      "html": "<a class=\"ds-social\" href=\"#projets\">Projets <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-social{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:8px 14px;border:1px solid transparent;border-radius:999px;background:#294bc6;color:white;font:500 13px/1.5 'Inter Variable', 'Inter', sans-serif;text-decoration:none;cursor:pointer;transition:background-color 180ms;padding:7px 12px;background:transparent;color:#5d665f;border-color:#79837b;transition:color 180ms,background-color 180ms,border-color 180ms}.ds-social:hover{color:#294bc6;background:#e8edff;border-color:#294bc6}.ds-social:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Ancres en pilules ; l’état courant est fourni par la page.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sections du portfolio\"><a href=\"#accueil\" aria-current=\"location\">Portfolio</a><a href=\"#competences\">Compétences</a><a href=\"#projets\">Projets</a><a href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;gap:4px;overflow-x:auto;background:#f7f8f5;padding:6px}.ds-nav a{min-height:36px;padding:8px 13px;border-radius:999px;color:#5d665f;font:400 13px/1.5 'Inter Variable', 'Inter', sans-serif;text-decoration:none;white-space:nowrap;transition:color 180ms,background-color 180ms}.ds-nav a:hover{color:#294bc6;background:#e8edff}.ds-nav a[aria-current=\"location\"]{color:white;background:#294bc6}.ds-nav a:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    },
+    {
+      "name": "Filtres des projets",
+      "kind": "chip",
+      "refersTo": "filter-active",
+      "description": "États visuels des trois filtres ; les comptes réels sont 6, 4 et 2.",
+      "html": "<div class=\"ds-filters\" role=\"group\" aria-label=\"Filtrer les projets\"><button aria-pressed=\"true\">Tous <span>6</span></button><button aria-pressed=\"false\">Professionnels <span>4</span></button><button aria-pressed=\"false\">Personnels <span>2</span></button></div>",
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:7px;padding:6px}.ds-filters button{display:flex;align-items:center;gap:7px;min-height:36px;padding:7px 13px;border:1px solid #79837b;border-radius:999px;background:transparent;color:#5d665f;font:400 12px/1.5 'Inter Variable', 'Inter', sans-serif;cursor:pointer;transition:background-color 180ms}.ds-filters span{font-size:10px}.ds-filters button:hover{background:#e8edff}.ds-filters button[aria-pressed=\"true\"]{background:#294bc6;border-color:#294bc6;color:white}.ds-filters button:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    },
+    {
+      "name": "Étiquette de technologie",
+      "kind": "chip",
+      "refersTo": "technology-tag",
+      "description": "Étiquette informative avec le tracé officiel Simple Icons.",
+      "html": "<span class=\"ds-tech\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"#61DAFB\" aria-hidden=\"true\"><path d=\"M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z\"/></svg>React</span>",
+      "css": ".ds-tech{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid #d7dcd6;border-radius:8px;background:transparent;color:#202623;font:400 13px/1.6 'Inter Variable', 'Inter', sans-serif;white-space:nowrap}.ds-tech svg{flex-shrink:0}"
+    },
+    {
+      "name": "Corps de carte projet",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Partie textuelle de la carte ; les captures réelles restent des médias du projet.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-heading\"><h3>Kasa</h3><a href=\"https://github.com/kiroxane/Project-5-Openclassroom\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Code source de Kasa (nouvel onglet)\">Code <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></div><p class=\"ds-category\">Projet professionnel</p><p class=\"ds-description\">Catalogue de logements en React. Navigation, carrousel de photos et interface responsive.</p><span class=\"ds-card-tag\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"#61DAFB\" aria-hidden=\"true\"><path d=\"M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z\"/></svg>React</span></article>",
+      "css": ".ds-card{border:1px solid #d7dcd6;border-radius:12px;padding:17px 16px 16px;background:#ffffff;color:#202623;max-width:320px}.ds-card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.ds-card h3{font:700 20px/1.35 'Playfair Display Variable', Georgia, serif;letter-spacing:-.025em;margin:0}.ds-card a{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:5px 8px;border:1px solid #79837b;border-radius:999px;color:#294bc6;text-decoration:none;font:400 10px/1.2 'Inter Variable', 'Inter', sans-serif}.ds-card a:hover{background:#e8edff}.ds-card a:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}.ds-category{color:#294bc6;font:400 10px/1.6 'Inter Variable', 'Inter', sans-serif;margin:6px 0 0}.ds-description{color:#5d665f;font:400 13px/1.6 'Inter Variable', 'Inter', sans-serif;margin:10px 0 16px}.ds-card-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 6px;border-radius:999px;background:#e8edff;color:#202623;font:400 10px/1.6 'Inter Variable', 'Inter', sans-serif}.ds-card-tag svg{width:14px;height:14px}"
+    },
+    {
+      "name": "Commandes de carrousel",
+      "kind": "custom",
+      "refersTo": "carousel-control",
+      "description": "Flèche photo et lecture/pause sur fond translucide ; la logique de lecture reste dans PhotoCarousel.",
+      "html": "<div class=\"ds-photo-controls\"><button class=\"ds-photo-arrow\" aria-label=\"Photo précédente\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"/></svg></button><button class=\"ds-photo-pause\" aria-label=\"Mettre le carrousel en pause\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M9 4v16M15 4v16\"/></svg></button><button class=\"ds-photo-arrow\" aria-label=\"Photo suivante\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></button></div>",
+      "css": ".ds-photo-controls{display:flex;align-items:center;gap:12px;padding:12px;background:#e8edff;border-radius:16px}.ds-photo-controls button{display:grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid rgb(255 255 255 / 40%);border-radius:50%;background:rgb(0 0 0 / 45%);color:white;cursor:pointer}.ds-photo-controls .ds-photo-pause{width:28px;height:28px}.ds-photo-controls button:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    },
+    {
+      "name": "Pause du ruban",
+      "kind": "custom",
+      "refersTo": "stack-control",
+      "description": "Bouton natif de pause/reprise ; aria-pressed exprime la pause persistante.",
+      "html": "<button class=\"ds-stack-toggle\" aria-label=\"Mettre le défilement des technologies en pause\" aria-pressed=\"false\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M9 4v16M15 4v16\"/></svg></button>",
+      "css": ".ds-stack-toggle{display:grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid #79837b;border-radius:50%;background:#e8edff;color:#294bc6;cursor:pointer}.ds-stack-toggle:focus-visible{outline:2px solid #294bc6;outline-offset:4px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La référence Serah Abijo, avec les contenus de Roxane",
+    "overview": "Le portfolio de Roxane KIKI, Développeuse Web Fullstack, reprend la direction explicitement choisie par l’utilisatrice : la référence Serah Abijo. Le fond ivoire, les accents bleu signature, les titres à empattements et les commandes compactes accompagnent les photos personnelles et les captures de projets. À sa demande, la palette précédente est restaurée ; la composition, les carrousels et les typographies Inter et Playfair Display sont conservés.\n\nLe rythme associe des sections aérées à des éléments denses : navigation en pilules, ruban de logos, étiquettes techniques et cartes de projets. La profondeur est réservée aux photographies. Les deux carrousels reprennent les deux photos originales de Roxane à l’AWS Summit, avec des commandes accessibles et une lecture interruptible.",
+    "keyCharacteristics": [
+      "Fond ivoire, bleu signature pour les actions et les états sélectionnés.",
+      "Playfair Display pour les titres, Inter pour les textes et commandes.",
+      "Portrait étroit, album final ample et captures d’interfaces réelles.",
+      "Cartes bordées, boutons en pilules et mouvement contrôlable."
+    ],
+    "rules": [
+      {
+        "name": "The Scoped World Rule",
+        "body": "Hériter de la palette commune dans tokens.css et appliquer les typographies du portfolio dans sa surface dédiée .portfolio-preview.",
+        "section": "colors"
+      },
+      {
+        "name": "The Controlled Motion Rule",
+        "body": "Toute lecture automatique possède une commande de pause et respecte la préférence de réduction des mouvements.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do conserver les couleurs communes dans tokens.css et les familles du portfolio dans sa portée locale, puis actualiser cette documentation après le code.",
+      "Do employer les deux photos originales et les six captures réelles, avec leurs textes alternatifs et limites de provenance.",
+      "Do conserver les boutons natifs, les noms accessibles, le focus visible et les états de sélection des filtres et carrousels.",
+      "Do vérifier les compositions à trois, deux et une colonnes ainsi que les ancres sous les deux hauteurs d’en-tête.",
+      "Do afficher une explication lorsque l’email ou le CV sont absents."
+    ],
+    "donts": [
+      "Don’t modifier les tokens racine bleus pour faire évoluer uniquement le portfolio.",
+      "Don’t attribuer à Roxane les biographies, langues, disponibilités, passions, produits ou médias personnels de la référence.",
+      "Don’t remplacer les captures réelles par des interfaces inventées ni présenter une capture locale comme une démonstration publique.",
+      "Don’t ajouter d’ombre aux cartes de projets par défaut ou supprimer les commandes de pause.",
+      "Don’t réactiver automatiquement un carrousel après une sélection manuelle ; sa reprise reste une action explicite."
+    ]
+  }
+}
