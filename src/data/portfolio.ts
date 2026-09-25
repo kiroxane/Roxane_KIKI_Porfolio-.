@@ -3,6 +3,8 @@ export type Project = {
   id: string;
   title: string;
   description: string;
+  /** Version courte, utilisée par les cartes du portfolio et du CV. */
+  summary?: string;
   category?: 'professional' | 'personal';
   context?: string;
   imageSrc?: string;
@@ -26,6 +28,8 @@ export type PortfolioContent = {
     caption?: string;
   };
   email?: string;
+  githubUrl?: string;
+  linkedinUrl?: string;
   cvUrl?: string;
   projects: Project[];
 };
@@ -35,6 +39,10 @@ export const portfolioContent: PortfolioContent = {
   role: 'Développeuse Web Fullstack',
   introduction: 'Des interfaces aux API, je développe des projets web pour donner vie aux idées.',
   about: 'Mon portfolio réunit des projets de formation et des réalisations personnelles, du frontend au backend. Interfaces React, intégration responsive, API et optimisation web : chaque projet est une occasion de mettre mes connaissances en pratique et d’aller plus loin.',
+  email: 'kiroxane@gmail.com',
+  githubUrl: 'https://github.com/kiroxane',
+  linkedinUrl: 'https://www.linkedin.com/in/roxanekiki-developpeur-web-informatique-paris/',
+  cvUrl: '/cv.pdf',
   portrait: {
     src: '/photos/portrait-aws-summit.jpg',
     alt: 'Portrait devant un écran AWS Summit, une main levée vers le nom de l’événement.',
@@ -52,6 +60,8 @@ export const portfolioContent: PortfolioContent = {
       context: 'Développement backend · OpenClassrooms',
       description:
         'API REST pour partager et noter des livres : authentification, gestion des ouvrages et des notes, classement des meilleurs livres. Les images importées sont redimensionnées et converties en WebP.',
+      summary:
+        'API de partage et de notation de livres. Authentification, gestion des ouvrages et optimisation des images.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Sharp'],
       sourceUrl: 'https://github.com/kiroxane/Projet_6_Openclassroom',
     },
@@ -64,7 +74,9 @@ export const portfolioContent: PortfolioContent = {
       context: 'Développement frontend · OpenClassrooms',
       description:
         'Interface React de présentation de logements : catalogue, fiches détaillées, carrousel de photos et sections dépliables. Navigation avec React Router, annonces issues de données JSON et mise en page adaptée au mobile.',
-      technologies: ['React', 'React Router', 'JavaScript', 'Sass', 'Vite'],
+      summary:
+        'Catalogue de logements en React. Navigation, carrousel de photos et interface responsive.',
+      technologies: ['React', 'React Router', 'JavaScript', 'Vite'],
       sourceUrl: 'https://github.com/kiroxane/Project-5-Openclassroom',
     },
     {
@@ -76,6 +88,8 @@ export const portfolioContent: PortfolioContent = {
       context: 'Performance et référencement',
       description:
         'Optimisation d’un portfolio de photographe : images WebP, chargement différé, CSS allégé et métadonnées SEO. Une galerie filtrable et une visionneuse permettent de parcourir les photographies.',
+      summary:
+        'Optimisation du portfolio d’une photographe : images, performance et référencement naturel.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'SEO'],
       sourceUrl: 'https://github.com/kiroxane/Project-3',
     },
@@ -88,6 +102,8 @@ export const portfolioContent: PortfolioContent = {
       context: 'Interface connectée à une API',
       description:
         'Portfolio d’architecte avec galerie alimentée par une API et filtrage par catégorie. Une interface de connexion donne accès à l’ajout et à la suppression de projets depuis des fenêtres modales.',
+      summary:
+        'Portfolio d’architecte connecté à une API. Galerie filtrable et interface de gestion des projets.',
       technologies: ['JavaScript', 'HTML', 'CSS', 'API REST'],
       sourceUrl: 'https://github.com/kiroxane/Project-2',
     },
@@ -100,6 +116,8 @@ export const portfolioContent: PortfolioContent = {
       context: 'Prototype JavaScript',
       description:
         'Prototype de gestionnaire de tâches en JavaScript : ajout, suppression et suivi des tâches terminées, avec une interface réalisée à l’aide de Bootstrap.',
+      summary:
+        'Prototype de gestionnaire de tâches : ajout, suppression et suivi des tâches terminées.',
       technologies: ['JavaScript', 'HTML', 'Bootstrap'],
       sourceUrl: 'https://github.com/kiroxane/To-do-list',
     },
@@ -112,6 +130,8 @@ export const portfolioContent: PortfolioContent = {
       context: 'Intégration responsive',
       description:
         'Intégration HTML et CSS d’une interface de réseau social : fil d’actualité, cartes de publication, profil et suggestions de contacts. Le travail porte sur la mise en page et son adaptation aux différentes tailles d’écran.',
+      summary:
+        'Interface de réseau social en HTML et CSS. Fil d’actualité, profil et mise en page responsive.',
       technologies: ['HTML', 'CSS'],
       sourceUrl: 'https://github.com/kiroxane/Reseau-social',
     },

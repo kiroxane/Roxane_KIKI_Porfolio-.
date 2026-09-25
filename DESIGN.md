@@ -197,7 +197,7 @@ L’introduction reste italique et limitée à 440 px. Les titres équilibrent l
 
 Le conteneur courant mesure `min(1024px, calc(100% - 48px))`. L’en-tête a son conteneur de 1120 px maximum ; le premier écran utilise 1088 px maximum, avec une colonne de texte souple et une colonne photo de 288 px. Les sections courantes ont 64 px d’espace vertical ; Compétences et Contact emploient aussi un rythme de 80 px. Ces mesures sont propres au portfolio.
 
-L’en-tête reste collant et mesure au minimum 57 px. Les ancres dégagent sa hauteur plus 24 px. La page suit l’ordre : accueil, ruban, À propos, Compétences, Projets, Contact, album, pied de page. La navigation peut présenter les ancres dans un autre ordre sans changer leur destination.
+L’en-tête reste collant et mesure au minimum 57 px. Les ancres dégagent sa hauteur plus 24 px. La page suit l’ordre : accueil, ruban, À propos, Compétences, Projets, Contact, album, pied de page. La navigation reprend cet ordre : Portfolio, À propos, Compétences, Projets, Contact. Les ancres du pied de page en découlent. Un menu qui annonce un autre ordre que celui de la lecture désoriente ; ajouter ou déplacer une section impose donc de mettre à jour `navigation` dans `PortfolioPreview.tsx`.
 
 | Seuil observé | Adaptation |
 | --- | --- |
@@ -272,7 +272,7 @@ Les images emploient `object-fit: cover`, un agrandissement de 8 % et une correc
 
 ### Technology ribbon
 
-Le ruban affiche JavaScript, React, Express, MongoDB, HTML, CSS, Sass, Node.js, Vite et GitHub. Deux groupes identiques assurent la boucle ; le second est masqué aux technologies d’assistance. Le survol suspend la boucle. Le bouton circulaire natif permet de mettre en pause et de relancer au clavier ou au pointeur ; son libellé décrit l’action et `aria-pressed` expose la pause persistante. La réduction des mouvements transforme le ruban en liste fixe.
+Le ruban affiche JavaScript, React, Express, MongoDB, HTML, CSS, Node.js, Vite et GitHub. Deux groupes identiques assurent la boucle ; le second est masqué aux technologies d’assistance. Le survol suspend la boucle. Le bouton circulaire natif permet de mettre en pause et de relancer au clavier ou au pointeur ; son libellé décrit l’action et `aria-pressed` expose la pause persistante. La réduction des mouvements transforme le ruban en liste fixe.
 
 ### Contact and footer
 

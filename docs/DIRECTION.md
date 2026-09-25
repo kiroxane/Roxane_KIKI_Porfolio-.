@@ -6,7 +6,9 @@ L’utilisatrice a choisi une reproduction fidèle du site [Serah Abijo](https:/
 
 Fond ivoire, bleu signature pour les actions et états actifs, Playfair Display dans les titres et Inter pour les textes. Le premier écran associe présentation à gauche et carrousel portrait à droite ; viennent ensuite ruban de logos, À propos, Compétences, Projets, Contact, grand album photo et pied de page. Les pilules, petits arrondis, filets et ombres réservées aux photos reprennent la grammaire de la référence.
 
-Le portfolio est désormais la seule page du projet et se trouve à `/`. La page de guide du design system a été retirée à la demande de Roxane ; sa documentation et la direction historique restent archivées dans [INITIAL-DESIGN.md](INITIAL-DESIGN.md), sans code correspondant. Le portfolio hérite de la palette commune dans `src/styles/tokens.css` ; ses typographies et sa composition restent définies dans sa surface locale.
+Le portfolio se trouve à `/` et le CV à `/cv`. Cette page CV a été demandée par Roxane après consultation de la page équivalente de la référence : même ordre de sections, filets verticaux, titres en majuscules, pastilles de dates, cartes de projets et formation en une ligne, mais dans la palette ivoire, encre et bleu signature du portfolio, sans le bordeaux de la référence. Le PDF téléchargeable est cette même page rendue en A4.
+
+La page de guide du design system, elle, a été retirée. La page de guide du design system a été retirée à la demande de Roxane ; sa documentation et la direction historique restent archivées dans [INITIAL-DESIGN.md](INITIAL-DESIGN.md), sans code correspondant. Le portfolio hérite de la palette commune dans `src/styles/tokens.css` ; ses typographies et sa composition restent définies dans sa surface locale.
 
 ## Contenu et interactions
 

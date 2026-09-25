@@ -139,3 +139,45 @@ Nettoyages associés : `global.css` ne conserve que la base partagée, la dépen
 - Recadrages contrôlés à l’image : la personne est entière dans la photo d’escalade ; l’écran ITIC Paris, les deux intervenants et le public sont présents dans la photo de conférence.
 
 **Limites :** aucun contrôle en navigateur n’a été effectué pour cet ajout, l’outil de navigation n’étant pas disponible. Le rendu de l’album, la pile, le glissement et le compteur « 01 — 02 » restent à vérifier visuellement. Les légendes et descriptions proposées ne sont pas confirmées par Roxane. Les textes alternatifs décrivent la scène sans affirmer l’identité des personnes.
+
+## Email, page CV et PDF
+
+Roxane a fourni son adresse `kiroxane@gmail.com`, sa formation, son alternance, ses langues et ses centres d’intérêt, puis a demandé une page CV reprenant celle de la référence tout en conservant sa charte. Les couleurs de la référence n’ont pas été reprises.
+
+- Contact : l’adresse est renseignée dans `portfolioContent`. Le lien `mailto:` et le bouton de copie sont actifs ; les mentions « Adresse email à ajouter » ont disparu. Valeur retrouvée une fois dans le bundle compilé.
+- Page `/cv` : nouvelle surface servie par `App.tsx` selon `window.location.pathname`. Le bouton « Voir CV » de l’en-tête et le lien « Mon CV » du pied de page y mènent. `curl` sur `/cv` renvoie 200 depuis `vite preview`.
+- PDF : `public/cv.pdf` est la page `/cv` rendue en A4 par la feuille de style d’impression, via `npm run cv:pdf`. Résultat contrôlé à l’image : **une page**, 410 Ko, toutes les sections présentes.
+- Mise en page d’impression corrigée deux fois : les règles mobiles s’appliquaient au rendu PDF, d’où un bandeau empilé et des pastilles de dates mal placées ; le bloc `@media print` a été déplacé en fin de fichier pour les annuler. La section Projets basculait entière en page 2 à cause d’un `break-inside: avoid` trop large, remplacé par `auto` sur la section et conservé sur les cartes. Langues et Centres d’intérêt sont placés côte à côte à l’impression pour tenir sur une page.
+- Portrait du CV : carré 800 × 800 tiré du portrait posé fourni, distinct des photos du portfolio. Recadrage contrôlé à l’image.
+- Déduplication : les résumés courts des projets, jusque-là écrits en dur dans `PortfolioPreview.tsx`, sont devenus le champ `summary` de chaque projet et servent aux deux pages.
+- `npm run typecheck` et `npm run build` réussis après chaque étape.
+
+**Contrôle du responsive.** Une capture directe à `--window-size=390` laissait croire à un débordement horizontal de la page CV. Vérification faite, le viewport de Chrome headless ne correspondait pas à la largeur demandée et l’image était simplement rognée. Une page de mesure temporaire, chargeant `/cv` dans une iframe de 390 px et parcourant le DOM, a donné `scrollWidth = 390` pour un viewport de 390 et aucun élément débordant. La page mobile a ensuite été recapturée à travers cette iframe calibrée, sans défaut. Le fichier de mesure a été supprimé.
+
+## Référencement
+
+Mise en place demandée par Roxane. L'état de départ se limitait au `lang`, au titre et à une description ; ni Open Graph, ni canonique, ni `robots.txt`, ni `sitemap.xml`, ni données structurées.
+
+- Adresse publique centralisée dans `.env` (`VITE_SITE_URL`), injectée dans `index.html` par Vite et lue par `src/data/seo.ts`. Valeur provisoire `https://roxane-kiki.netlify.app` : Roxane n'avait pas encore créé son hébergement.
+- `index.html` : titre, description, `author`, `robots`, canonique, Open Graph complet, carte Twitter `summary_large_image`, favicon et bloc JSON-LD `Person` avec profils, formation, langues et compétences.
+- `src/data/seo.ts` met à jour titre, description, canonique et Open Graph au passage entre `/` et `/cv`.
+- `public/og-image.png` : 1200 × 630, 249 Ko, généré depuis `scripts/og-image.html` par Chrome, dans la charte du site. Rendu contrôlé à l'image.
+- `robots.txt` et `sitemap.xml` générés par `scripts/build-seo.mjs`, branché sur `npm run build`.
+- `public/_redirects` et `vercel.json` ajoutés pour que `/cv` réponde sur un hébergeur statique.
+- Le commentaire de conception laissé dans `index.html` a été retiré. Il était servi en production et mentionnait la reproduction de `serahabijo.com` : visible par quiconque affiche le code source de la page.
+
+Vérifications : `npm run typecheck` et `npm run build` réussis ; plus aucun `%VITE_SITE_URL%` dans `dist/index.html` ; canonique, `og:url` et `og:image` en absolu ; JSON-LD relu par un analyseur JSON, type `Person` et deux profils `sameAs` ; `robots.txt` et `sitemap.xml` présents dans `dist/` avec les deux routes.
+
+**Limites :** aucun test avec les validateurs en ligne de LinkedIn, Facebook ou Google, le site n'étant pas déployé. Les balises ne seront réellement exploitables qu'une fois l'adresse définitive renseignée. Le rendu reste côté navigateur : le HTML servi ne contient pas le contenu des pages.
+
+## Profils GitHub et LinkedIn
+
+Roxane a demandé l'ajout de ses profils. GitHub était déjà présent ; LinkedIn a été ajouté et les deux URL sont passées dans `portfolioContent` (`githubUrl`, `linkedinUrl`) plutôt qu'écrites en dur.
+
+- Portfolio : LinkedIn ajouté aux liens de l'accueil, à ceux de la section Contact et à la colonne Contact du pied de page, à côté de GitHub.
+- CV : LinkedIn ajouté au bandeau de coordonnées, entre GitHub et Portfolio.
+- Le logo officiel de LinkedIn n'est pas utilisé. La marque l'a fait retirer de Simple Icons comme de Lucide ; aucune des deux bibliothèques du projet ne le fournit, et il n'a pas été redessiné. L'entrée porte l'icône neutre `ContactRound` de Lucide et le libellé « LinkedIn ». GitHub conserve son logo officiel, toujours disponible dans Simple Icons.
+- La ligne supplémentaire faisait passer le PDF à deux pages. Les coordonnées passent à trois colonnes à l'impression : retour à une page, 412 Ko.
+- `npm run typecheck` et `npm run build` réussis ; l'URL LinkedIn est présente une fois dans le bundle ; accueil et PDF contrôlés à l'image.
+
+**Limites :** les contrôles sont automatisés, par capture et par mesure du DOM ; aucune relecture humaine du rendu n’a eu lieu. Le descriptif des missions du poste de manager adjoint est une proposition. La cohérence des dates a été signalée à Roxane, qui a confirmé 2024-2025. Sur un hébergeur statique, la route `/cv` exige une redirection des URL inconnues vers `index.html` ; ce point n’a pas été testé hors de `vite preview`.

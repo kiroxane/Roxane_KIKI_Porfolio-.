@@ -38,6 +38,14 @@ Aucune retouche de couleur n’est appliquée au fichier : seuls le recadrage, l
 
 Les légendes et descriptions affichées sont des propositions, modifiables dans `storyPhotos`. Les textes alternatifs décrivent la scène visible sans affirmer l’identité des personnes photographiées. La conférence montre des tiers identifiables de dos et deux intervenants sur scène ; leur diffusion relève d’une décision de Roxane.
 
+## Portrait du CV
+
+Source fournie par l’utilisatrice : `Roxane (3).jpg`, portrait posé en studio, 3744 × 5616. L’original n’est pas modifié.
+
+Un carré de 3100 × 3100 a été prélevé avec `sips`, décalé de 280 px vers le bas et de 450 px vers la droite pour centrer le visage et conserver les épaules, puis réduit en 800 × 800 et enregistré en JPEG qualité 82 sous `public/photos/portrait-cv.jpg`, soit 108 Ko. Aucune retouche de couleur, de peau ou de décor n’est appliquée.
+
+Ce portrait sert uniquement au bandeau de la page `/cv` et à son PDF. Il est déclaré dans `cvContent.portrait`, distinct de `portfolioContent.portrait` : le portfolio conserve les photos AWS Summit.
+
 ## Historique de la première version
 
 La première intégration utilisait uniquement IMG_4445 dans la section « À propos », avec un cadre 4:5, un agrandissement de 10 % et un point d’ancrage à 80 % de la hauteur. Cette disposition a été remplacée lors de la refonte et de l’ajout des carrousels.

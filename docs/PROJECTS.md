@@ -33,8 +33,8 @@ Les PNG sont des captures du navigateur, pas des visuels générés ni des maque
 [Dépôt Project-5-Openclassroom](https://github.com/kiroxane/Project-5-Openclassroom)
 
 - **Périmètre retenu :** interface de catalogue et de fiches de logements, carrousel, sections dépliables, routage et adaptation mobile.
-- **Technologies :** React, React Router, JavaScript, Sass et Vite.
-- **Preuves :** [fiche logement](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/src/pages/Logement/Logement.jsx), [routes](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/src/App.jsx), [styles responsive](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/src/pages/Logement/Logement.scss), [dépendances](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/package.json).
+- **Technologies :** React, React Router, JavaScript et Vite.
+- **Preuves :** [fiche logement](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/src/pages/Logement/Logement.jsx), [routes](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/src/App.jsx), [dépendances](https://github.com/kiroxane/Project-5-Openclassroom/blob/master/package.json).
 - **Limites :** les annonces proviennent d’un fichier JSON local. Aucune réservation, paiement ou gestion backend n’est revendiqué. Le contexte OpenClassrooms figure dans le nom du dépôt et du package. Aucune démo publique déclarée dans les métadonnées.
 
 ### Nina Carducci

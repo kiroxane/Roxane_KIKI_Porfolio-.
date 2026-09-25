@@ -1,0 +1,166 @@
+/* Page CV. Reprend la composition de la référence avec la palette du portfolio :
+   ivoire, encre et bleu signature, Playfair Display et Inter. */
+.cv-page {
+  --font-sans: 'Inter Variable', 'Inter', sans-serif;
+  --font-display: 'Playfair Display Variable', Georgia, serif;
+  --header-height: 57px;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.cv-page :is(h1, h2, h3) { font-family: var(--font-display); font-weight: 700; letter-spacing: -.025em; text-wrap: balance; }
+.cv-page :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.cv-page #cv-content:focus { outline: none; }
+
+.cv-container { width: min(1024px, calc(100% - 48px)); margin-inline: auto; }
+
+.cv-skip-link { position: fixed; z-index: 100; top: 10px; left: 12px; padding: 10px 18px; border-radius: 8px; color: white; background: var(--color-accent); transform: translateY(-180%); }
+.cv-skip-link:focus { transform: translateY(0); }
+
+/* En-tête collant, même grammaire que le portfolio */
+.cv-header { position: sticky; z-index: 30; top: 0; border-bottom: 1px solid var(--color-border); background: var(--color-bg); }
+.cv-header-inner { width: min(1120px, calc(100% - 48px)); margin-inline: auto; min-height: 57px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.cv-navigation { display: flex; align-items: center; gap: 4px; }
+.cv-navigation a { min-height: 36px; padding: 8px 13px; border-radius: 999px; text-decoration: none; color: var(--color-muted); font-size: 13px; line-height: 1.5; transition: color 180ms, background-color 180ms; white-space: nowrap; }
+.cv-navigation a:hover { background: var(--color-accent-soft); color: var(--color-accent); }
+.cv-navigation a[aria-current='page'] { color: white; background: var(--color-accent); }
+.cv-download { display: inline-flex; align-items: center; gap: 8px; min-height: 34px; padding: 6px 13px; border: 1px solid transparent; border-radius: 6px; background: var(--color-accent); color: white; font-size: 13px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 180ms; }
+.cv-download:hover { background: var(--color-accent-hover); }
+
+/* Bandeau d'identité */
+.cv-masthead { display: flex; align-items: center; gap: 30px; margin-top: 34px; padding: 26px 30px; background: var(--color-surface); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: 12px; }
+.cv-portrait { flex-shrink: 0; width: 132px; height: 132px; border-radius: 10px; border: 1px solid var(--color-border); overflow: hidden; }
+.cv-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.cv-identity { min-width: 0; }
+.cv-page h1 { font-size: 36px; line-height: 1.15; margin-bottom: 3px; }
+.cv-role { color: var(--color-accent); font-size: 15px; font-weight: 500; }
+.cv-contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 30px; margin-top: 18px; }
+.cv-contact-grid > * { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--color-text); text-decoration: none; min-width: 0; }
+.cv-contact-grid a:hover { color: var(--color-accent); }
+.cv-contact-icon { flex-shrink: 0; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: var(--color-accent-soft); color: var(--color-accent); }
+.cv-contact-grid span.cv-contact-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Sections, avec le filet vertical de la référence */
+.cv-section { border-left: 2px solid var(--color-border); padding-left: 20px; margin-top: 34px; }
+.cv-section h2 { font-family: var(--font-sans); font-size: 12px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 14px; }
+.cv-profile { font-size: 14.5px; max-width: 76ch; }
+.cv-profile b { font-weight: 600; }
+
+/* Pastilles de technologies */
+.cv-stack { display: flex; flex-wrap: wrap; gap: 8px; }
+.cv-stack span { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-surface); font-size: 13px; font-weight: 500; }
+
+/* Entrées datées : expérience et formation */
+.cv-entry { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-block: 9px; }
+.cv-entry + .cv-entry { border-top: 1px solid var(--color-border); }
+.cv-entry-main { min-width: 0; }
+.cv-entry-main h3 { font-family: var(--font-sans); font-size: 14.5px; font-weight: 600; letter-spacing: -.005em; }
+.cv-entry-main p { color: var(--color-muted); font-size: 13.5px; }
+.cv-entry-main .cv-entry-detail { color: var(--color-text); margin-top: 4px; }
+.cv-date { flex-shrink: 0; padding: 4px 11px; border-radius: 999px; background: var(--color-accent-soft); color: var(--color-accent); font-size: 12px; font-weight: 500; white-space: nowrap; }
+
+/* Formation : une ligne par entrée */
+.cv-education h3 { display: inline; }
+.cv-education .cv-education-title { display: inline; color: var(--color-muted); }
+
+/* Cartes de projets */
+.cv-projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.cv-project { display: flex; flex-direction: column; padding: 15px 17px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-surface); }
+.cv-project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cv-project-top h3 { font-family: var(--font-sans); font-size: 14.5px; font-weight: 600; }
+.cv-project-logos { display: flex; flex-shrink: 0; gap: 6px; }
+.cv-project p { color: var(--color-muted); font-size: 13px; line-height: 1.5; margin-top: 6px; }
+.cv-project-link { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 10px; color: var(--color-accent); font-size: 12.5px; font-weight: 500; text-decoration: none; }
+.cv-project-link:hover { text-decoration: underline; }
+
+/* Langues et centres d'intérêt */
+.cv-languages { display: flex; flex-wrap: wrap; gap: 10px 34px; }
+.cv-languages div { display: flex; align-items: baseline; gap: 9px; }
+.cv-languages dt { font-size: 14px; font-weight: 600; }
+.cv-languages dd { color: var(--color-muted); font-size: 13.5px; }
+.cv-interests { display: flex; flex-wrap: wrap; gap: 8px; }
+.cv-interests span { padding: 6px 14px; border-radius: 999px; background: var(--color-accent-soft); color: var(--color-text); font-size: 13px; }
+
+/* Une colonne à l'écran ; deux colonnes à l'impression, voir le bloc @media print. */
+.cv-pair { display: grid; grid-template-columns: 1fr; }
+
+.cv-footer { margin-top: 48px; padding-block: 26px; border-top: 1px solid var(--color-border); }
+.cv-footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; color: var(--color-muted); font-size: 13px; }
+.cv-footer a { display: inline-flex; align-items: center; gap: 7px; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+.cv-footer a:hover { text-decoration: underline; }
+
+.cv-page main { padding-bottom: 8px; }
+
+@media (max-width: 860px) {
+  .cv-projects-grid { grid-template-columns: 1fr; }
+  .cv-contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .cv-container { width: calc(100% - 32px); }
+  .cv-header-inner { min-height: 99px; flex-wrap: wrap; justify-content: flex-end; gap: 7px; padding-block: 8px; width: calc(100% - 32px); }
+  .cv-header-inner > .cv-download { order: -1; }
+  .cv-navigation { width: 100%; gap: 1px; }
+  .cv-navigation a { padding: 7px 10px; font-size: 12px; min-height: 32px; }
+  .cv-masthead { flex-direction: column; align-items: flex-start; gap: 20px; padding: 22px; }
+  .cv-portrait { width: 104px; height: 104px; }
+  .cv-page h1 { font-size: 30px; }
+  .cv-section { padding-left: 15px; margin-top: 28px; }
+  .cv-entry { flex-direction: column; gap: 6px; }
+  .cv-date { order: -1; }
+}
+
+/* Version imprimable : le PDF téléchargeable est cette même page rendue en A4.
+   Ce bloc vient en dernier pour annuler les adaptations mobiles ci-dessus, que la
+   largeur de page déclenche à l'impression. Régénérer avec `npm run cv:pdf`. */
+@media print {
+  @page { size: A4; margin: 0; }
+  .cv-header, .cv-footer, .cv-skip-link { display: none !important; }
+  .cv-page {
+    font-size: 9pt;
+    line-height: 1.42;
+    padding: 11mm 12mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cv-container { width: 100%; }
+
+  .cv-masthead { flex-direction: row; align-items: center; margin-top: 0; gap: 6mm; padding: 3.6mm 5mm; border-radius: 3mm; break-inside: avoid; }
+  .cv-portrait { width: 27mm; height: 27mm; border-radius: 2.4mm; }
+  .cv-page h1 { font-size: 22pt; }
+  .cv-role { font-size: 10.5pt; }
+  .cv-contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2mm 6mm; margin-top: 3.4mm; }
+  .cv-contact-grid > * { gap: 2.2mm; font-size: 8.6pt; }
+  .cv-contact-icon { width: 5mm; height: 5mm; border-radius: 1.4mm; }
+
+  /* La section peut se couper entre deux pages ; ses entrées, non. */
+  .cv-section { margin-top: 3.1mm; padding-left: 4.4mm; break-inside: auto; }
+  .cv-section h2 { font-size: 8pt; margin-bottom: 2.6mm; break-after: avoid; }
+  .cv-profile { font-size: 9pt; max-width: none; }
+
+  .cv-stack { gap: 1.6mm; }
+  .cv-stack span { padding: 1mm 2.6mm; font-size: 8.2pt; gap: 1.6mm; }
+
+  .cv-entry { flex-direction: row; align-items: baseline; padding-block: 1.2mm; gap: 5mm; break-inside: avoid; }
+  .cv-entry-main h3 { font-size: 9.4pt; }
+  .cv-entry-main p { font-size: 8.7pt; }
+  .cv-date { order: 0; padding: 0.7mm 2.4mm; font-size: 7.8pt; }
+
+  .cv-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4mm; }
+  .cv-project { padding: 2.6mm 3mm; border-radius: 2mm; break-inside: avoid; }
+  .cv-project-top h3 { font-size: 9.2pt; }
+  .cv-project p { font-size: 8.3pt; line-height: 1.37; margin-top: 1mm; }
+  .cv-project-link { padding-top: 2mm; font-size: 8pt; }
+
+  .cv-languages { gap: 2mm 9mm; }
+  .cv-languages dt { font-size: 9pt; }
+  .cv-languages dd { font-size: 8.6pt; }
+  .cv-interests { gap: 1.6mm; }
+  .cv-interests span { padding: 1mm 3mm; font-size: 8.4pt; }
+
+  .cv-pair { grid-template-columns: 1fr 1fr; column-gap: 8mm; align-items: start; }
+
+  .cv-page main { padding-bottom: 0; }
+}
