@@ -18,6 +18,8 @@
 .portfolio-skip-link:focus { transform: translateY(0); }
 .portfolio-header { position: sticky; z-index: 30; top: 0; border-bottom: 1px solid var(--color-border); background: var(--color-bg); }
 .portfolio-header-inner { width: min(1120px, calc(100% - 48px)); margin-inline: auto; min-height: 57px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.portfolio-header-brand, .portfolio-menu-toggle, .portfolio-menu-backdrop { display: none; }
+.portfolio-menu { display: contents; }
 .portfolio-navigation { display: flex; align-items: center; gap: 4px; }
 .portfolio-navigation a { min-height: 36px; padding: 8px 13px; border-radius: 999px; text-decoration: none; color: var(--color-muted); font-size: 13px; line-height: 1.5; transition: color 180ms, background-color 180ms; white-space: nowrap; }
 .portfolio-navigation a:hover { background: var(--color-accent-soft); color: var(--color-accent); }
@@ -146,7 +148,10 @@
 .portfolio-footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-block: 22px; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 11px; }
 @keyframes stack-scroll { to { transform: translateX(-50%); } }
 @keyframes carousel-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes portfolio-menu-in { from { opacity: 0; transform: translateY(-6px); } }
 @media (prefers-reduced-motion: reduce) {
+  .portfolio-menu[data-open='true'] { animation: none; }
+
   .portfolio-stack-toggle { display: none; }
   .portfolio-stack-track { animation: none; width: auto; }
   .portfolio-stack-group { flex-wrap: wrap; gap: 18px; padding: 16px 24px; }
@@ -161,11 +166,17 @@
   .portfolio-contact { gap: 48px; }
 }
 @media (max-width: 760px) {
-  .portfolio-preview { --header-height: 99px; }
-  .portfolio-header-inner { min-height: 99px; flex-wrap: wrap; justify-content: flex-end; gap: 7px; padding-block: 8px; width: calc(100% - 32px); }
-  .portfolio-header-inner > .portfolio-button { order: -1; }
-  .portfolio-navigation { width: 100%; justify-content: space-between; overflow-x: auto; gap: 1px; padding-block: 2px; }
-  .portfolio-navigation a { padding: 7px 10px; font-size: 11px; min-height: 32px; }
+  .portfolio-preview { --header-height: 57px; }
+  .portfolio-header-inner { position: relative; width: calc(100% - 32px); gap: 12px; }
+  .portfolio-header-brand { display: block; color: var(--color-text); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .portfolio-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -8px; border: 0; border-radius: 8px; background: transparent; color: var(--color-text); cursor: pointer; }
+  .portfolio-menu-toggle:hover, .portfolio-menu-toggle[aria-expanded='true'] { background: var(--color-accent-soft); color: var(--color-accent); }
+  .portfolio-menu { display: none; position: absolute; z-index: 2; top: 100%; left: -16px; right: -16px; flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 16px 20px; border-bottom: 1px solid var(--color-border); background: var(--color-bg); box-shadow: 0 16px 32px rgb(32 38 35 / .1); }
+  .portfolio-menu[data-open='true'] { display: flex; animation: portfolio-menu-in 180ms ease-out; }
+  .portfolio-menu-backdrop { display: block; position: fixed; inset: 57px 0 0; z-index: 1; background: rgb(32 38 35 / .25); }
+  .portfolio-navigation { flex-direction: column; align-items: stretch; gap: 2px; }
+  .portfolio-navigation a { min-height: 48px; display: flex; align-items: center; padding: 10px 14px; border-radius: 8px; font-size: 16px; color: var(--color-text); }
+  .portfolio-menu > .portfolio-button { width: 100%; justify-content: center; min-height: 48px; font-size: 15px; }
   .portfolio-hero { width: calc(100% - 48px); padding: 44px 0 34px; min-height: auto; grid-template-columns: 1fr; gap: 42px; }
   .portfolio-hero-copy { max-width: 500px; }
   .portfolio-preview h1 { font-size: 36px; }

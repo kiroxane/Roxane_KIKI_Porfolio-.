@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowUpRight, Check, Code2, ContactRound, Copy, Database, FileText, Mail, Pause, Play, Plus, Sparkles } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Check, Code2, ContactRound, Copy, Database, FileText, Mail, Menu, Pause, Play, Plus, Sparkles, X } from 'lucide-react'
 import PhotoCarousel from '../components/PhotoCarousel'
 import BrandIcon from '../components/BrandIcon'
 import { CyclingTechnology, TypingTitle, useMotionRegions } from '../components/PortfolioMotion'
@@ -48,6 +48,8 @@ export default function PortfolioPreview() {
   const [filter, setFilter] = useState<(typeof filters)[number]['id']>('all')
   const [copyStatus, setCopyStatus] = useState('')
   const [stackPaused, setStackPaused] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuButton = useRef<HTMLButtonElement>(null)
   const projects = content.projects.filter(project => filter === 'all' || project.category === filter)
 
   useEffect(() => {
@@ -77,6 +79,20 @@ export default function PortfolioPreview() {
     }
   }, [content.name, content.role])
 
+  // Menu mobile : se ferme avec Échap ou quand l'écran repasse en largeur bureau.
+  useEffect(() => {
+    if (!menuOpen) return
+    const desktop = window.matchMedia('(min-width: 761px)')
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') { setMenuOpen(false); menuButton.current?.focus() } }
+    const onChange = () => { if (desktop.matches) setMenuOpen(false) }
+    document.addEventListener('keydown', onKey)
+    desktop.addEventListener('change', onChange)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      desktop.removeEventListener('change', onChange)
+    }
+  }, [menuOpen])
+
   async function copyEmail() {
     if (!content.email) return
     try { await navigator.clipboard.writeText(content.email); setCopyStatus('Adresse copiée') }
@@ -88,9 +104,16 @@ export default function PortfolioPreview() {
       <a className="portfolio-skip-link" href="#main-content">Aller au contenu</a>
       <header className="portfolio-header">
         <div className="portfolio-header-inner">
-          <nav className="portfolio-navigation" aria-label="Navigation principale">{navigation.map(item => <a key={item.id} href={`#${item.id}`} aria-current={activeSection === item.id ? 'location' : undefined}>{item.label}</a>)}</nav>
-          <a className="portfolio-button portfolio-button--small" href="/cv"><FileText size={16} aria-hidden="true" /> Voir CV</a>
+          <a className="portfolio-header-brand" href="#accueil" onClick={() => setMenuOpen(false)}>{content.name}</a>
+          <button ref={menuButton} type="button" className="portfolio-menu-toggle" aria-expanded={menuOpen} aria-controls="portfolio-menu" aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'} onClick={() => setMenuOpen(open => !open)}>
+            {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
+          <div id="portfolio-menu" className="portfolio-menu" data-open={menuOpen} onClick={event => { if ((event.target as HTMLElement).closest('a')) setMenuOpen(false) }}>
+            <nav className="portfolio-navigation" aria-label="Navigation principale">{navigation.map(item => <a key={item.id} href={`#${item.id}`} aria-current={activeSection === item.id ? 'location' : undefined}>{item.label}</a>)}</nav>
+            <a className="portfolio-button portfolio-button--small" href="/cv"><FileText size={16} aria-hidden="true" /> Voir CV</a>
+          </div>
         </div>
+        {menuOpen && <div className="portfolio-menu-backdrop" aria-hidden="true" onClick={() => setMenuOpen(false)} />}
       </header>
       <main id="main-content" tabIndex={-1}>
         <section id="accueil" className="portfolio-hero" aria-labelledby="portfolio-title">
