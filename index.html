@@ -31,6 +31,9 @@
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/photos/portrait-cv.jpg" />
+    <!-- Première photo du carrousel : c'est l'élément le plus grand du premier écran (LCP).
+         La précharger évite d'attendre le JavaScript pour la découvrir. Garder en phase avec PhotoCarousel. -->
+    <link rel="preload" as="image" type="image/webp" fetchpriority="high" href="/photos/portrait-aws-summit-600.webp" imagesrcset="/photos/portrait-aws-summit-600.webp 600w, /photos/portrait-aws-summit-1200.webp 1200w" imagesizes="(max-width: 760px) 256px, 288px" />
 
     <script type="application/ld+json">
       {

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { CSSProperties, PointerEvent } from 'react'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
+import { responsiveImage, thumbnailImage } from '../data/images'
 import '../styles/carousel-motion.css'
 
 /** `description` accompagne la légende dans la variante album ; elle décrit la photo affichée. */
@@ -9,6 +10,9 @@ type SlideTransition = { from: number; to: number; direction: number; offset: nu
 type Drag = { pointerId: number; x: number; y: number; offset: number; axis: 'pending' | 'horizontal' | 'vertical' }
 const PORTRAIT_INTERVAL = 8000
 const TRANSITION_DURATION = 500
+
+/** Largeur affichée des photos, pour que le navigateur télécharge la bonne taille. */
+const slideSizes = { portrait: '(max-width: 760px) 256px, 288px', stories: '(max-width: 520px) calc(100vw - 64px), 448px' }
 
 export default function PhotoCarousel({ photos, variant = 'portrait' }: { photos: CarouselPhoto[]; variant?: 'portrait' | 'stories' }) {
   const [index, setIndex] = useState(0)
@@ -150,10 +154,10 @@ export default function PhotoCarousel({ photos, variant = 'portrait' }: { photos
             const active = photoIndex === currentIndex
             const exiting = transition?.from === photoIndex
             const stackIndex = (photoIndex - currentIndex + photos.length) % photos.length
-            return <figure key={photo.src} className={`photo-carousel-slide${active ? ' is-active' : ''}${exiting ? ' is-exiting' : ''}${transition?.to === photoIndex ? ' is-arriving' : ''}`} style={{ '--stack-index': stackIndex } as CSSProperties} aria-hidden={!active || exiting} role="group" aria-roledescription="diapositive" aria-label={`${photoIndex + 1} sur ${photos.length}`}>
-              <img src={photo.src} alt={photo.alt} width={1200} height={1600} fetchPriority={photoIndex === 0 ? 'high' : 'auto'} draggable={false} />
+            return <div key={photo.src} className={`photo-carousel-slide${active ? ' is-active' : ''}${exiting ? ' is-exiting' : ''}${transition?.to === photoIndex ? ' is-arriving' : ''}`} style={{ '--stack-index': stackIndex } as CSSProperties} aria-hidden={!active || exiting} role="group" aria-roledescription="diapositive" aria-label={`${photoIndex + 1} sur ${photos.length}`}><figure className="photo-carousel-figure">
+              <img {...responsiveImage(photo.src, slideSizes[variant])} alt={photo.alt} width={1200} height={1600} loading={variant === 'portrait' ? 'eager' : 'lazy'} fetchPriority={variant === 'portrait' && photoIndex === 0 ? 'high' : 'auto'} decoding="async" draggable={false} />
               <figcaption><strong>{photo.caption}</strong>{variant === 'stories' ? <span>{photo.description}<small>{String(photoIndex + 1).padStart(2, '0')} — {String(photos.length).padStart(2, '0')}</small></span> : null}</figcaption>
-            </figure>
+            </figure></div>
           })}
         </div>
         {variant === 'portrait' ? <div className="photo-carousel-progress" aria-hidden="true">{photos.map((photo, photoIndex) => <span key={photo.src} className={photoIndex === currentIndex ? 'is-active' : photoIndex < currentIndex ? 'is-complete' : ''}><i ref={photoIndex === currentIndex ? progress : undefined} style={{ transform: photoIndex === currentIndex ? `scaleX(${Math.min(elapsed.current / PORTRAIT_INTERVAL, 1)})` : undefined }} /></span>)}</div> : null}
@@ -162,7 +166,7 @@ export default function PhotoCarousel({ photos, variant = 'portrait' }: { photos
         {variant === 'portrait' && !reducedMotion ? <button data-carousel-play className="photo-carousel-play" onClick={() => { setPlaying(value => !value); setFocused(false) }} aria-label={playing ? 'Mettre le carrousel en pause' : 'Lancer le carrousel'}>{playing ? <Pause size={14} /> : <Play size={14} />}</button> : null}
       </div>
       <div className="photo-carousel-thumbnails" role="group" aria-label="Choisir une photo">
-        {photos.map((photo, photoIndex) => <button key={photo.src} aria-label={`Afficher la photo ${photoIndex + 1} : ${photo.caption}`} aria-pressed={photoIndex === currentIndex} onClick={() => select(photoIndex)}><img src={photo.src} alt="" width={60} height={80} draggable={false} /></button>)}
+        {photos.map((photo, photoIndex) => <button key={photo.src} aria-label={`Afficher la photo ${photoIndex + 1} : ${photo.caption}`} aria-pressed={photoIndex === currentIndex} onClick={() => select(photoIndex)}><img src={thumbnailImage(photo.src)} alt="" width={60} height={80} loading="lazy" draggable={false} /></button>)}
       </div>
     </div>
   )
