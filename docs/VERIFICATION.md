@@ -158,7 +158,7 @@ Roxane a fourni son adresse `kiroxane@gmail.com`, sa formation, son alternance, 
 
 Mise en place demandée par Roxane. L'état de départ se limitait au `lang`, au titre et à une description ; ni Open Graph, ni canonique, ni `robots.txt`, ni `sitemap.xml`, ni données structurées.
 
-- Adresse publique centralisée dans `.env` (`VITE_SITE_URL`), injectée dans `index.html` par Vite et lue par `src/data/seo.ts`. Valeur provisoire `https://roxane-kiki.netlify.app` : Roxane n'avait pas encore créé son hébergement.
+- Adresse publique centralisée dans `.env` (`VITE_SITE_URL`), injectée dans `index.html` par Vite et lue par `src/data/seo.ts`. Valeur : `https://roxane-kiki-porfolio.vercel.app` (hébergement Vercel), qui remplace la valeur provisoire Netlify.
 - `index.html` : titre, description, `author`, `robots`, canonique, Open Graph complet, carte Twitter `summary_large_image`, favicon et bloc JSON-LD `Person` avec profils, formation, langues et compétences.
 - `src/data/seo.ts` met à jour titre, description, canonique et Open Graph au passage entre `/` et `/cv`.
 - `public/og-image.png` : 1200 × 630, 249 Ko, généré depuis `scripts/og-image.html` par Chrome, dans la charte du site. Rendu contrôlé à l'image.

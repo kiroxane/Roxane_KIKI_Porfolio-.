@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://roxane-kiki.netlify.app/sitemap.xml
+Sitemap: https://roxane-kiki-porfolio.vercel.app/sitemap.xml
